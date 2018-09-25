@@ -49,6 +49,7 @@ public interface Application {
 
     /**
      * This method returns the status of a peding buffer invoice by using an uuid
+     *             
      * 
      * @param password
      * @param uuid
@@ -100,6 +101,7 @@ public interface Application {
 
     /**
      * This method returns the sat receipt (response) of the cancellation webservice
+     *             
      * 
      * @param password
      * @param type
