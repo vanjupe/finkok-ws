@@ -1,5 +1,5 @@
 
-package com.finkok.facturacion.cancel;
+package com.finkok.facturacion.cancel.test;
 
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -18,9 +18,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="UUID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="EstatusUUID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="EstatusCancelacion" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="UUID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -31,42 +30,15 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Folio", namespace = "apps.services.soap.core.views", propOrder = {
-    "uuid",
     "estatusUUID",
-    "estatusCancelacion"
+    "uuid"
 })
 public class Folio {
 
-    @XmlElementRef(name = "UUID", namespace = "apps.services.soap.core.views", type = JAXBElement.class, required = false)
-    protected JAXBElement<String> uuid;
     @XmlElementRef(name = "EstatusUUID", namespace = "apps.services.soap.core.views", type = JAXBElement.class, required = false)
     protected JAXBElement<String> estatusUUID;
-    @XmlElementRef(name = "EstatusCancelacion", namespace = "apps.services.soap.core.views", type = JAXBElement.class, required = false)
-    protected JAXBElement<String> estatusCancelacion;
-
-    /**
-     * Obtiene el valor de la propiedad uuid.
-     * 
-     * @return
-     *     possible object is
-     *     {@link JAXBElement }{@code <}{@link String }{@code >}
-     *     
-     */
-    public JAXBElement<String> getUUID() {
-        return uuid;
-    }
-
-    /**
-     * Define el valor de la propiedad uuid.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link JAXBElement }{@code <}{@link String }{@code >}
-     *     
-     */
-    public void setUUID(JAXBElement<String> value) {
-        this.uuid = value;
-    }
+    @XmlElementRef(name = "UUID", namespace = "apps.services.soap.core.views", type = JAXBElement.class, required = false)
+    protected JAXBElement<String> uuid;
 
     /**
      * Obtiene el valor de la propiedad estatusUUID.
@@ -93,27 +65,27 @@ public class Folio {
     }
 
     /**
-     * Obtiene el valor de la propiedad estatusCancelacion.
+     * Obtiene el valor de la propiedad uuid.
      * 
      * @return
      *     possible object is
      *     {@link JAXBElement }{@code <}{@link String }{@code >}
      *     
      */
-    public JAXBElement<String> getEstatusCancelacion() {
-        return estatusCancelacion;
+    public JAXBElement<String> getUUID() {
+        return uuid;
     }
 
     /**
-     * Define el valor de la propiedad estatusCancelacion.
+     * Define el valor de la propiedad uuid.
      * 
      * @param value
      *     allowed object is
      *     {@link JAXBElement }{@code <}{@link String }{@code >}
      *     
      */
-    public void setEstatusCancelacion(JAXBElement<String> value) {
-        this.estatusCancelacion = value;
+    public void setUUID(JAXBElement<String> value) {
+        this.uuid = value;
     }
 
 }

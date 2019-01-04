@@ -38,28 +38,28 @@ public class ObjectFactory {
     private final static QName _Edit_QNAME = new QName("http://facturacion.finkok.com/registration", "edit");
     private final static QName _AddResponse_QNAME = new QName("http://facturacion.finkok.com/registration", "addResponse");
     private final static QName _GetResponse_QNAME = new QName("http://facturacion.finkok.com/registration", "getResponse");
-    private final static QName _RegistrationResultMessage_QNAME = new QName("apps.services.soap.core.views", "message");
-    private final static QName _RegistrationResultSuccess_QNAME = new QName("apps.services.soap.core.views", "success");
     private final static QName _AssignResponseAssignResult_QNAME = new QName("http://facturacion.finkok.com/registration", "assignResult");
-    private final static QName _EditResponseEditResult_QNAME = new QName("http://facturacion.finkok.com/registration", "editResult");
+    private final static QName _GetResellerUsername_QNAME = new QName("http://facturacion.finkok.com/registration", "reseller_username");
+    private final static QName _GetResellerPassword_QNAME = new QName("http://facturacion.finkok.com/registration", "reseller_password");
+    private final static QName _GetTaxpayerId_QNAME = new QName("http://facturacion.finkok.com/registration", "taxpayer_id");
     private final static QName _GetResponseGetResult_QNAME = new QName("http://facturacion.finkok.com/registration", "getResult");
-    private final static QName _AddResponseAddResult_QNAME = new QName("http://facturacion.finkok.com/registration", "addResult");
-    private final static QName _AddResellerUsername_QNAME = new QName("http://facturacion.finkok.com/registration", "reseller_username");
-    private final static QName _AddPassphrase_QNAME = new QName("http://facturacion.finkok.com/registration", "passphrase");
-    private final static QName _AddKey_QNAME = new QName("http://facturacion.finkok.com/registration", "key");
-    private final static QName _AddResellerPassword_QNAME = new QName("http://facturacion.finkok.com/registration", "reseller_password");
-    private final static QName _AddCer_QNAME = new QName("http://facturacion.finkok.com/registration", "cer");
-    private final static QName _AddTypeUser_QNAME = new QName("http://facturacion.finkok.com/registration", "type_user");
-    private final static QName _AddAdded_QNAME = new QName("http://facturacion.finkok.com/registration", "added");
-    private final static QName _AddCoupon_QNAME = new QName("http://facturacion.finkok.com/registration", "coupon");
-    private final static QName _AddTaxpayerId_QNAME = new QName("http://facturacion.finkok.com/registration", "taxpayer_id");
-    private final static QName _AssignCredit_QNAME = new QName("http://facturacion.finkok.com/registration", "credit");
-    private final static QName _EditStatus_QNAME = new QName("http://facturacion.finkok.com/registration", "status");
     private final static QName _ResellerUserCounter_QNAME = new QName("apps.services.soap.core.views", "counter");
     private final static QName _ResellerUserCredit_QNAME = new QName("apps.services.soap.core.views", "credit");
     private final static QName _ResellerUserStatus_QNAME = new QName("apps.services.soap.core.views", "status");
     private final static QName _ResellerUserTaxpayerId_QNAME = new QName("apps.services.soap.core.views", "taxpayer_id");
+    private final static QName _RegistrationListResultMessage_QNAME = new QName("apps.services.soap.core.views", "message");
     private final static QName _RegistrationListResultUsers_QNAME = new QName("apps.services.soap.core.views", "users");
+    private final static QName _AddResponseAddResult_QNAME = new QName("http://facturacion.finkok.com/registration", "addResult");
+    private final static QName _RegistrationResultSuccess_QNAME = new QName("apps.services.soap.core.views", "success");
+    private final static QName _AssignCredit_QNAME = new QName("http://facturacion.finkok.com/registration", "credit");
+    private final static QName _EditResponseEditResult_QNAME = new QName("http://facturacion.finkok.com/registration", "editResult");
+    private final static QName _AddPassphrase_QNAME = new QName("http://facturacion.finkok.com/registration", "passphrase");
+    private final static QName _AddKey_QNAME = new QName("http://facturacion.finkok.com/registration", "key");
+    private final static QName _AddCer_QNAME = new QName("http://facturacion.finkok.com/registration", "cer");
+    private final static QName _AddTypeUser_QNAME = new QName("http://facturacion.finkok.com/registration", "type_user");
+    private final static QName _AddAdded_QNAME = new QName("http://facturacion.finkok.com/registration", "added");
+    private final static QName _AddCoupon_QNAME = new QName("http://facturacion.finkok.com/registration", "coupon");
+    private final static QName _EditStatus_QNAME = new QName("http://facturacion.finkok.com/registration", "status");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.finkok.facturacion.registration
@@ -290,24 +290,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "apps.services.soap.core.views", name = "message", scope = RegistrationResult.class)
-    public JAXBElement<String> createRegistrationResultMessage(String value) {
-        return new JAXBElement<String>(_RegistrationResultMessage_QNAME, String.class, RegistrationResult.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "apps.services.soap.core.views", name = "success", scope = RegistrationResult.class)
-    public JAXBElement<Boolean> createRegistrationResultSuccess(Boolean value) {
-        return new JAXBElement<Boolean>(_RegistrationResultSuccess_QNAME, Boolean.class, RegistrationResult.class, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link AssingResult }{@code >}}
      * 
      */
@@ -317,12 +299,30 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link RegistrationResult }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://facturacion.finkok.com/registration", name = "editResult", scope = EditResponse.class)
-    public JAXBElement<RegistrationResult> createEditResponseEditResult(RegistrationResult value) {
-        return new JAXBElement<RegistrationResult>(_EditResponseEditResult_QNAME, RegistrationResult.class, EditResponse.class, value);
+    @XmlElementDecl(namespace = "http://facturacion.finkok.com/registration", name = "reseller_username", scope = Get.class)
+    public JAXBElement<String> createGetResellerUsername(String value) {
+        return new JAXBElement<String>(_GetResellerUsername_QNAME, String.class, Get.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://facturacion.finkok.com/registration", name = "reseller_password", scope = Get.class)
+    public JAXBElement<String> createGetResellerPassword(String value) {
+        return new JAXBElement<String>(_GetResellerPassword_QNAME, String.class, Get.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://facturacion.finkok.com/registration", name = "taxpayer_id", scope = Get.class)
+    public JAXBElement<String> createGetTaxpayerId(String value) {
+        return new JAXBElement<String>(_GetTaxpayerId_QNAME, String.class, Get.class, value);
     }
 
     /**
@@ -332,6 +332,60 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://facturacion.finkok.com/registration", name = "getResult", scope = GetResponse.class)
     public JAXBElement<RegistrationListResult> createGetResponseGetResult(RegistrationListResult value) {
         return new JAXBElement<RegistrationListResult>(_GetResponseGetResult_QNAME, RegistrationListResult.class, GetResponse.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigInteger }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "apps.services.soap.core.views", name = "counter", scope = ResellerUser.class)
+    public JAXBElement<BigInteger> createResellerUserCounter(BigInteger value) {
+        return new JAXBElement<BigInteger>(_ResellerUserCounter_QNAME, BigInteger.class, ResellerUser.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigInteger }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "apps.services.soap.core.views", name = "credit", scope = ResellerUser.class)
+    public JAXBElement<BigInteger> createResellerUserCredit(BigInteger value) {
+        return new JAXBElement<BigInteger>(_ResellerUserCredit_QNAME, BigInteger.class, ResellerUser.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "apps.services.soap.core.views", name = "status", scope = ResellerUser.class)
+    public JAXBElement<String> createResellerUserStatus(String value) {
+        return new JAXBElement<String>(_ResellerUserStatus_QNAME, String.class, ResellerUser.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "apps.services.soap.core.views", name = "taxpayer_id", scope = ResellerUser.class)
+    public JAXBElement<String> createResellerUserTaxpayerId(String value) {
+        return new JAXBElement<String>(_ResellerUserTaxpayerId_QNAME, String.class, ResellerUser.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "apps.services.soap.core.views", name = "message", scope = RegistrationListResult.class)
+    public JAXBElement<String> createRegistrationListResultMessage(String value) {
+        return new JAXBElement<String>(_RegistrationListResultMessage_QNAME, String.class, RegistrationListResult.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ResellerUserArray }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "apps.services.soap.core.views", name = "users", scope = RegistrationListResult.class)
+    public JAXBElement<ResellerUserArray> createRegistrationListResultUsers(ResellerUserArray value) {
+        return new JAXBElement<ResellerUserArray>(_RegistrationListResultUsers_QNAME, ResellerUserArray.class, RegistrationListResult.class, value);
     }
 
     /**
@@ -347,9 +401,45 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
+    @XmlElementDecl(namespace = "apps.services.soap.core.views", name = "message", scope = RegistrationResult.class)
+    public JAXBElement<String> createRegistrationResultMessage(String value) {
+        return new JAXBElement<String>(_RegistrationListResultMessage_QNAME, String.class, RegistrationResult.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "apps.services.soap.core.views", name = "success", scope = RegistrationResult.class)
+    public JAXBElement<Boolean> createRegistrationResultSuccess(Boolean value) {
+        return new JAXBElement<Boolean>(_RegistrationResultSuccess_QNAME, Boolean.class, RegistrationResult.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link BigInteger }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://facturacion.finkok.com/registration", name = "credit", scope = Assign.class)
+    public JAXBElement<BigInteger> createAssignCredit(BigInteger value) {
+        return new JAXBElement<BigInteger>(_AssignCredit_QNAME, BigInteger.class, Assign.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link RegistrationResult }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://facturacion.finkok.com/registration", name = "editResult", scope = EditResponse.class)
+    public JAXBElement<RegistrationResult> createEditResponseEditResult(RegistrationResult value) {
+        return new JAXBElement<RegistrationResult>(_EditResponseEditResult_QNAME, RegistrationResult.class, EditResponse.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
     @XmlElementDecl(namespace = "http://facturacion.finkok.com/registration", name = "reseller_username", scope = Add.class)
     public JAXBElement<String> createAddResellerUsername(String value) {
-        return new JAXBElement<String>(_AddResellerUsername_QNAME, String.class, Add.class, value);
+        return new JAXBElement<String>(_GetResellerUsername_QNAME, String.class, Add.class, value);
     }
 
     /**
@@ -376,7 +466,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://facturacion.finkok.com/registration", name = "reseller_password", scope = Add.class)
     public JAXBElement<String> createAddResellerPassword(String value) {
-        return new JAXBElement<String>(_AddResellerPassword_QNAME, String.class, Add.class, value);
+        return new JAXBElement<String>(_GetResellerPassword_QNAME, String.class, Add.class, value);
     }
 
     /**
@@ -421,16 +511,34 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://facturacion.finkok.com/registration", name = "taxpayer_id", scope = Add.class)
     public JAXBElement<String> createAddTaxpayerId(String value) {
-        return new JAXBElement<String>(_AddTaxpayerId_QNAME, String.class, Add.class, value);
+        return new JAXBElement<String>(_GetTaxpayerId_QNAME, String.class, Add.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link BigInteger }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://facturacion.finkok.com/registration", name = "credit", scope = Assign.class)
-    public JAXBElement<BigInteger> createAssignCredit(BigInteger value) {
-        return new JAXBElement<BigInteger>(_AssignCredit_QNAME, BigInteger.class, Assign.class, value);
+    @XmlElementDecl(namespace = "apps.services.soap.core.views", name = "credit", scope = AssingResult.class)
+    public JAXBElement<BigInteger> createAssingResultCredit(BigInteger value) {
+        return new JAXBElement<BigInteger>(_ResellerUserCredit_QNAME, BigInteger.class, AssingResult.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "apps.services.soap.core.views", name = "message", scope = AssingResult.class)
+    public JAXBElement<String> createAssingResultMessage(String value) {
+        return new JAXBElement<String>(_RegistrationListResultMessage_QNAME, String.class, AssingResult.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "apps.services.soap.core.views", name = "success", scope = AssingResult.class)
+    public JAXBElement<Boolean> createAssingResultSuccess(Boolean value) {
+        return new JAXBElement<Boolean>(_RegistrationResultSuccess_QNAME, Boolean.class, AssingResult.class, value);
     }
 
     /**
@@ -439,7 +547,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://facturacion.finkok.com/registration", name = "reseller_username", scope = Edit.class)
     public JAXBElement<String> createEditResellerUsername(String value) {
-        return new JAXBElement<String>(_AddResellerUsername_QNAME, String.class, Edit.class, value);
+        return new JAXBElement<String>(_GetResellerUsername_QNAME, String.class, Edit.class, value);
     }
 
     /**
@@ -475,7 +583,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://facturacion.finkok.com/registration", name = "reseller_password", scope = Edit.class)
     public JAXBElement<String> createEditResellerPassword(String value) {
-        return new JAXBElement<String>(_AddResellerPassword_QNAME, String.class, Edit.class, value);
+        return new JAXBElement<String>(_GetResellerPassword_QNAME, String.class, Edit.class, value);
     }
 
     /**
@@ -493,115 +601,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://facturacion.finkok.com/registration", name = "taxpayer_id", scope = Edit.class)
     public JAXBElement<String> createEditTaxpayerId(String value) {
-        return new JAXBElement<String>(_AddTaxpayerId_QNAME, String.class, Edit.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigInteger }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "apps.services.soap.core.views", name = "counter", scope = ResellerUser.class)
-    public JAXBElement<BigInteger> createResellerUserCounter(BigInteger value) {
-        return new JAXBElement<BigInteger>(_ResellerUserCounter_QNAME, BigInteger.class, ResellerUser.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigInteger }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "apps.services.soap.core.views", name = "credit", scope = ResellerUser.class)
-    public JAXBElement<BigInteger> createResellerUserCredit(BigInteger value) {
-        return new JAXBElement<BigInteger>(_ResellerUserCredit_QNAME, BigInteger.class, ResellerUser.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "apps.services.soap.core.views", name = "status", scope = ResellerUser.class)
-    public JAXBElement<String> createResellerUserStatus(String value) {
-        return new JAXBElement<String>(_ResellerUserStatus_QNAME, String.class, ResellerUser.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "apps.services.soap.core.views", name = "taxpayer_id", scope = ResellerUser.class)
-    public JAXBElement<String> createResellerUserTaxpayerId(String value) {
-        return new JAXBElement<String>(_ResellerUserTaxpayerId_QNAME, String.class, ResellerUser.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://facturacion.finkok.com/registration", name = "reseller_username", scope = Get.class)
-    public JAXBElement<String> createGetResellerUsername(String value) {
-        return new JAXBElement<String>(_AddResellerUsername_QNAME, String.class, Get.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://facturacion.finkok.com/registration", name = "reseller_password", scope = Get.class)
-    public JAXBElement<String> createGetResellerPassword(String value) {
-        return new JAXBElement<String>(_AddResellerPassword_QNAME, String.class, Get.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://facturacion.finkok.com/registration", name = "taxpayer_id", scope = Get.class)
-    public JAXBElement<String> createGetTaxpayerId(String value) {
-        return new JAXBElement<String>(_AddTaxpayerId_QNAME, String.class, Get.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BigInteger }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "apps.services.soap.core.views", name = "credit", scope = AssingResult.class)
-    public JAXBElement<BigInteger> createAssingResultCredit(BigInteger value) {
-        return new JAXBElement<BigInteger>(_ResellerUserCredit_QNAME, BigInteger.class, AssingResult.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "apps.services.soap.core.views", name = "message", scope = AssingResult.class)
-    public JAXBElement<String> createAssingResultMessage(String value) {
-        return new JAXBElement<String>(_RegistrationResultMessage_QNAME, String.class, AssingResult.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "apps.services.soap.core.views", name = "success", scope = AssingResult.class)
-    public JAXBElement<Boolean> createAssingResultSuccess(Boolean value) {
-        return new JAXBElement<Boolean>(_RegistrationResultSuccess_QNAME, Boolean.class, AssingResult.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "apps.services.soap.core.views", name = "message", scope = RegistrationListResult.class)
-    public JAXBElement<String> createRegistrationListResultMessage(String value) {
-        return new JAXBElement<String>(_RegistrationResultMessage_QNAME, String.class, RegistrationListResult.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ResellerUserArray }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "apps.services.soap.core.views", name = "users", scope = RegistrationListResult.class)
-    public JAXBElement<ResellerUserArray> createRegistrationListResultUsers(ResellerUserArray value) {
-        return new JAXBElement<ResellerUserArray>(_RegistrationListResultUsers_QNAME, ResellerUserArray.class, RegistrationListResult.class, value);
+        return new JAXBElement<String>(_GetTaxpayerId_QNAME, String.class, Edit.class, value);
     }
 
 }
