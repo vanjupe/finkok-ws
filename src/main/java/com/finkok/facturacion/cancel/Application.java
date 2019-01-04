@@ -24,7 +24,9 @@ public interface Application {
 
 
     /**
-     * This method cancels a CFDI by the given enveloped signature
+     * 
+     *                 This method cancels a CFDI by the given enveloped signature
+     *             
      * 
      * @param password
      * @param xml
@@ -48,7 +50,150 @@ public interface Application {
         Boolean storePending);
 
     /**
-     * This method returns the status of a peding buffer invoice by using an uuid
+     * 
+     *                 This method returns the sat receipt (response) of the cancellation webservice
+     *             
+     * 
+     * @param password
+     * @param total
+     * @param rtaxpayerId
+     * @param uuid
+     * @param taxpayerId
+     * @param username
+     * @return
+     *     returns com.finkok.facturacion.cancel.AcuseSatEstatus
+     */
+    @WebMethod(operationName = "get_out_sat_status", action = "get_out_sat_status")
+    @WebResult(name = "get_out_sat_statusResult", targetNamespace = "http://facturacion.finkok.com/cancel")
+    @RequestWrapper(localName = "get_out_sat_status", targetNamespace = "http://facturacion.finkok.com/cancel", className = "com.finkok.facturacion.cancel.GetOutSatStatus")
+    @ResponseWrapper(localName = "get_out_sat_statusResponse", targetNamespace = "http://facturacion.finkok.com/cancel", className = "com.finkok.facturacion.cancel.GetOutSatStatusResponse")
+    public AcuseSatEstatus getOutSatStatus(
+        @WebParam(name = "username", targetNamespace = "http://facturacion.finkok.com/cancel")
+        String username,
+        @WebParam(name = "password", targetNamespace = "http://facturacion.finkok.com/cancel")
+        String password,
+        @WebParam(name = "taxpayer_id", targetNamespace = "http://facturacion.finkok.com/cancel")
+        String taxpayerId,
+        @WebParam(name = "rtaxpayer_id", targetNamespace = "http://facturacion.finkok.com/cancel")
+        String rtaxpayerId,
+        @WebParam(name = "uuid", targetNamespace = "http://facturacion.finkok.com/cancel")
+        String uuid,
+        @WebParam(name = "total", targetNamespace = "http://facturacion.finkok.com/cancel")
+        String total);
+
+    /**
+     * 
+     *                 This method returns the sat receipt (response) of the cancellation webservice
+     *             
+     * 
+     * @param password
+     * @param rtaxpayerId
+     * @param username
+     * @return
+     *     returns com.finkok.facturacion.cancel.CancelPendingResult
+     */
+    @WebMethod(operationName = "get_out_pending", action = "get_out_pending")
+    @WebResult(name = "get_out_pendingResult", targetNamespace = "http://facturacion.finkok.com/cancel")
+    @RequestWrapper(localName = "get_out_pending", targetNamespace = "http://facturacion.finkok.com/cancel", className = "com.finkok.facturacion.cancel.GetOutPending")
+    @ResponseWrapper(localName = "get_out_pendingResponse", targetNamespace = "http://facturacion.finkok.com/cancel", className = "com.finkok.facturacion.cancel.GetOutPendingResponse")
+    public CancelPendingResult getOutPending(
+        @WebParam(name = "username", targetNamespace = "http://facturacion.finkok.com/cancel")
+        String username,
+        @WebParam(name = "password", targetNamespace = "http://facturacion.finkok.com/cancel")
+        String password,
+        @WebParam(name = "rtaxpayer_id", targetNamespace = "http://facturacion.finkok.com/cancel")
+        String rtaxpayerId);
+
+    /**
+     * 
+     *                 This method returns the sat receipt (response) of the cancellation webservice
+     *             
+     * 
+     * @param password
+     * @param rtaxpayerId
+     * @param username
+     * @return
+     *     returns com.finkok.facturacion.cancel.CancelPendingResult
+     */
+    @WebMethod(operationName = "get_pending", action = "get_pending")
+    @WebResult(name = "get_pendingResult", targetNamespace = "http://facturacion.finkok.com/cancel")
+    @RequestWrapper(localName = "get_pending", targetNamespace = "http://facturacion.finkok.com/cancel", className = "com.finkok.facturacion.cancel.GetPending")
+    @ResponseWrapper(localName = "get_pendingResponse", targetNamespace = "http://facturacion.finkok.com/cancel", className = "com.finkok.facturacion.cancel.GetPendingResponse")
+    public CancelPendingResult getPending(
+        @WebParam(name = "username", targetNamespace = "http://facturacion.finkok.com/cancel")
+        String username,
+        @WebParam(name = "password", targetNamespace = "http://facturacion.finkok.com/cancel")
+        String password,
+        @WebParam(name = "rtaxpayer_id", targetNamespace = "http://facturacion.finkok.com/cancel")
+        String rtaxpayerId);
+
+    /**
+     * 
+     *                 This method returns the sat receipt (response) of the cancellation webservice
+     *             
+     * 
+     * @param password
+     * @param total
+     * @param rtaxpayerId
+     * @param uuid
+     * @param taxpayerId
+     * @param username
+     * @return
+     *     returns com.finkok.facturacion.cancel.AcuseSatEstatus
+     */
+    @WebMethod(operationName = "get_sat_status", action = "get_sat_status")
+    @WebResult(name = "get_sat_statusResult", targetNamespace = "http://facturacion.finkok.com/cancel")
+    @RequestWrapper(localName = "get_sat_status", targetNamespace = "http://facturacion.finkok.com/cancel", className = "com.finkok.facturacion.cancel.GetSatStatus")
+    @ResponseWrapper(localName = "get_sat_statusResponse", targetNamespace = "http://facturacion.finkok.com/cancel", className = "com.finkok.facturacion.cancel.GetSatStatusResponse")
+    public AcuseSatEstatus getSatStatus(
+        @WebParam(name = "username", targetNamespace = "http://facturacion.finkok.com/cancel")
+        String username,
+        @WebParam(name = "password", targetNamespace = "http://facturacion.finkok.com/cancel")
+        String password,
+        @WebParam(name = "taxpayer_id", targetNamespace = "http://facturacion.finkok.com/cancel")
+        String taxpayerId,
+        @WebParam(name = "rtaxpayer_id", targetNamespace = "http://facturacion.finkok.com/cancel")
+        String rtaxpayerId,
+        @WebParam(name = "uuid", targetNamespace = "http://facturacion.finkok.com/cancel")
+        String uuid,
+        @WebParam(name = "total", targetNamespace = "http://facturacion.finkok.com/cancel")
+        String total);
+
+    /**
+     * 
+     *                 This method returns the sat receipt (response) of the cancellation webservice
+     *             
+     * 
+     * @param cer
+     * @param password
+     * @param rtaxpayerId
+     * @param uuid
+     * @param key
+     * @param username
+     * @return
+     *     returns com.finkok.facturacion.cancel.RelatedResult
+     */
+    @WebMethod(operationName = "get_related", action = "get_related")
+    @WebResult(name = "get_relatedResult", targetNamespace = "http://facturacion.finkok.com/cancel")
+    @RequestWrapper(localName = "get_related", targetNamespace = "http://facturacion.finkok.com/cancel", className = "com.finkok.facturacion.cancel.GetRelated")
+    @ResponseWrapper(localName = "get_relatedResponse", targetNamespace = "http://facturacion.finkok.com/cancel", className = "com.finkok.facturacion.cancel.GetRelatedResponse")
+    public RelatedResult getRelated(
+        @WebParam(name = "username", targetNamespace = "http://facturacion.finkok.com/cancel")
+        String username,
+        @WebParam(name = "password", targetNamespace = "http://facturacion.finkok.com/cancel")
+        String password,
+        @WebParam(name = "rtaxpayer_id", targetNamespace = "http://facturacion.finkok.com/cancel")
+        String rtaxpayerId,
+        @WebParam(name = "uuid", targetNamespace = "http://facturacion.finkok.com/cancel")
+        String uuid,
+        @WebParam(name = "cer", targetNamespace = "http://facturacion.finkok.com/cancel")
+        byte[] cer,
+        @WebParam(name = "key", targetNamespace = "http://facturacion.finkok.com/cancel")
+        byte[] key);
+
+    /**
+     * 
+     *                 This method returns the status of a peding buffer invoice by using an uuid
      *             
      * 
      * @param password
@@ -70,7 +215,9 @@ public interface Application {
         String uuid);
 
     /**
-     * This method returns a session id for work with the webservices
+     * 
+     *                 This method returns a session id for work with the webservices
+     *             
      * 
      * @param password
      * @param serial
@@ -100,7 +247,8 @@ public interface Application {
         Boolean storePending);
 
     /**
-     * This method returns the sat receipt (response) of the cancellation webservice
+     * 
+     *                 This method returns the sat receipt (response) of the cancellation webservice
      *             
      * 
      * @param password
@@ -128,7 +276,9 @@ public interface Application {
         String type);
 
     /**
-     * This method returns a session id for work with the webservices
+     * 
+     *                 This method returns a session id for work with the webservices
+     *             
      * 
      * @param cer
      * @param password
@@ -162,6 +312,38 @@ public interface Application {
 
     /**
      * 
+     *                 This method returns the sat receipt (response) of the cancellation webservice
+     *             
+     * 
+     * @param cer
+     * @param password
+     * @param rtaxpayerId
+     * @param uuid
+     * @param key
+     * @param username
+     * @return
+     *     returns com.finkok.facturacion.cancel.RelatedResult
+     */
+    @WebMethod(operationName = "get_out_related", action = "get_out_related")
+    @WebResult(name = "get_out_relatedResult", targetNamespace = "http://facturacion.finkok.com/cancel")
+    @RequestWrapper(localName = "get_out_related", targetNamespace = "http://facturacion.finkok.com/cancel", className = "com.finkok.facturacion.cancel.GetOutRelated")
+    @ResponseWrapper(localName = "get_out_relatedResponse", targetNamespace = "http://facturacion.finkok.com/cancel", className = "com.finkok.facturacion.cancel.GetOutRelatedResponse")
+    public RelatedResult getOutRelated(
+        @WebParam(name = "username", targetNamespace = "http://facturacion.finkok.com/cancel")
+        String username,
+        @WebParam(name = "password", targetNamespace = "http://facturacion.finkok.com/cancel")
+        String password,
+        @WebParam(name = "rtaxpayer_id", targetNamespace = "http://facturacion.finkok.com/cancel")
+        String rtaxpayerId,
+        @WebParam(name = "uuid", targetNamespace = "http://facturacion.finkok.com/cancel")
+        String uuid,
+        @WebParam(name = "cer", targetNamespace = "http://facturacion.finkok.com/cancel")
+        byte[] cer,
+        @WebParam(name = "key", targetNamespace = "http://facturacion.finkok.com/cancel")
+        byte[] key);
+
+    /**
+     * 
      * @param cer
      * @param password
      * @param xml
@@ -191,5 +373,63 @@ public interface Application {
         byte[] key,
         @WebParam(name = "store_pending", targetNamespace = "http://facturacion.finkok.com/cancel")
         Boolean storePending);
+
+    /**
+     * 
+     * @param cer
+     * @param password
+     * @param uuidAR
+     * @param rtaxpayerId
+     * @param key
+     * @param username
+     * @return
+     *     returns com.finkok.facturacion.cancel.AcceptRejectResult
+     */
+    @WebMethod(operationName = "out_accept_reject", action = "out_accept_reject")
+    @WebResult(name = "out_accept_rejectResult", targetNamespace = "http://facturacion.finkok.com/cancel")
+    @RequestWrapper(localName = "out_accept_reject", targetNamespace = "http://facturacion.finkok.com/cancel", className = "com.finkok.facturacion.cancel.OutAcceptReject")
+    @ResponseWrapper(localName = "out_accept_rejectResponse", targetNamespace = "http://facturacion.finkok.com/cancel", className = "com.finkok.facturacion.cancel.OutAcceptRejectResponse")
+    public AcceptRejectResult outAcceptReject(
+        @WebParam(name = "UUID_AR", targetNamespace = "http://facturacion.finkok.com/cancel")
+        UUIDAR uuidAR,
+        @WebParam(name = "username", targetNamespace = "http://facturacion.finkok.com/cancel")
+        String username,
+        @WebParam(name = "password", targetNamespace = "http://facturacion.finkok.com/cancel")
+        String password,
+        @WebParam(name = "rtaxpayer_id", targetNamespace = "http://facturacion.finkok.com/cancel")
+        String rtaxpayerId,
+        @WebParam(name = "cer", targetNamespace = "http://facturacion.finkok.com/cancel")
+        byte[] cer,
+        @WebParam(name = "key", targetNamespace = "http://facturacion.finkok.com/cancel")
+        byte[] key);
+
+    /**
+     * 
+     * @param cer
+     * @param password
+     * @param rtaxpayerId
+     * @param key
+     * @param uuidsAR
+     * @param username
+     * @return
+     *     returns com.finkok.facturacion.cancel.AcceptRejectResult
+     */
+    @WebMethod(operationName = "accept_reject", action = "accept_reject")
+    @WebResult(name = "accept_rejectResult", targetNamespace = "http://facturacion.finkok.com/cancel")
+    @RequestWrapper(localName = "accept_reject", targetNamespace = "http://facturacion.finkok.com/cancel", className = "com.finkok.facturacion.cancel.AcceptReject")
+    @ResponseWrapper(localName = "accept_rejectResponse", targetNamespace = "http://facturacion.finkok.com/cancel", className = "com.finkok.facturacion.cancel.AcceptRejectResponse")
+    public AcceptRejectResult acceptReject(
+        @WebParam(name = "UUIDS_AR", targetNamespace = "http://facturacion.finkok.com/cancel")
+        UUIDSAR uuidsAR,
+        @WebParam(name = "username", targetNamespace = "http://facturacion.finkok.com/cancel")
+        String username,
+        @WebParam(name = "password", targetNamespace = "http://facturacion.finkok.com/cancel")
+        String password,
+        @WebParam(name = "rtaxpayer_id", targetNamespace = "http://facturacion.finkok.com/cancel")
+        String rtaxpayerId,
+        @WebParam(name = "cer", targetNamespace = "http://facturacion.finkok.com/cancel")
+        byte[] cer,
+        @WebParam(name = "key", targetNamespace = "http://facturacion.finkok.com/cancel")
+        byte[] key);
 
 }

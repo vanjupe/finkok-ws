@@ -38,10 +38,6 @@ public class ObjectFactory {
     private final static QName _IncidenciaArray_QNAME = new QName("apps.services.soap.core.views", "IncidenciaArray");
     private final static QName _QuickStamp_QNAME = new QName("http://facturacion.finkok.com/stamp", "quick_stamp");
     private final static QName _QuickStampResponse_QNAME = new QName("http://facturacion.finkok.com/stamp", "quick_stampResponse");
-    private final static QName _StampResponseStampResult_QNAME = new QName("http://facturacion.finkok.com/stamp", "stampResult");
-    private final static QName _QueryPendingUuid_QNAME = new QName("http://facturacion.finkok.com/stamp", "uuid");
-    private final static QName _QueryPendingUsername_QNAME = new QName("http://facturacion.finkok.com/stamp", "username");
-    private final static QName _QueryPendingPassword_QNAME = new QName("http://facturacion.finkok.com/stamp", "password");
     private final static QName _QueryPendingResultUuid_QNAME = new QName("apps.services.soap.core.views", "uuid");
     private final static QName _QueryPendingResultUuidStatus_QNAME = new QName("apps.services.soap.core.views", "uuid_status");
     private final static QName _QueryPendingResultError_QNAME = new QName("apps.services.soap.core.views", "error");
@@ -50,8 +46,6 @@ public class ObjectFactory {
     private final static QName _QueryPendingResultNextAttempt_QNAME = new QName("apps.services.soap.core.views", "next_attempt");
     private final static QName _QueryPendingResultDate_QNAME = new QName("apps.services.soap.core.views", "date");
     private final static QName _QueryPendingResultXml_QNAME = new QName("apps.services.soap.core.views", "xml");
-    private final static QName _StampedResponseStampedResult_QNAME = new QName("http://facturacion.finkok.com/stamp", "stampedResult");
-    private final static QName _StampXml_QNAME = new QName("http://facturacion.finkok.com/stamp", "xml");
     private final static QName _IncidenciaRfcEmisor_QNAME = new QName("apps.services.soap.core.views", "RfcEmisor");
     private final static QName _IncidenciaCodigoError_QNAME = new QName("apps.services.soap.core.views", "CodigoError");
     private final static QName _IncidenciaExtraInfo_QNAME = new QName("apps.services.soap.core.views", "ExtraInfo");
@@ -61,8 +55,15 @@ public class ObjectFactory {
     private final static QName _IncidenciaFechaRegistro_QNAME = new QName("apps.services.soap.core.views", "FechaRegistro");
     private final static QName _IncidenciaIdIncidencia_QNAME = new QName("apps.services.soap.core.views", "IdIncidencia");
     private final static QName _IncidenciaMensajeIncidencia_QNAME = new QName("apps.services.soap.core.views", "MensajeIncidencia");
-    private final static QName _SignStampResponseSignStampResult_QNAME = new QName("http://facturacion.finkok.com/stamp", "sign_stampResult");
+    private final static QName _StampResponseStampResult_QNAME = new QName("http://facturacion.finkok.com/stamp", "stampResult");
+    private final static QName _StampedResponseStampedResult_QNAME = new QName("http://facturacion.finkok.com/stamp", "stampedResult");
     private final static QName _QuickStampResponseQuickStampResult_QNAME = new QName("http://facturacion.finkok.com/stamp", "quick_stampResult");
+    private final static QName _SignStampResponseSignStampResult_QNAME = new QName("http://facturacion.finkok.com/stamp", "sign_stampResult");
+    private final static QName _SignStampUsername_QNAME = new QName("http://facturacion.finkok.com/stamp", "username");
+    private final static QName _SignStampXml_QNAME = new QName("http://facturacion.finkok.com/stamp", "xml");
+    private final static QName _SignStampPassword_QNAME = new QName("http://facturacion.finkok.com/stamp", "password");
+    private final static QName _QueryPendingResponseQueryPendingResult_QNAME = new QName("http://facturacion.finkok.com/stamp", "query_pendingResult");
+    private final static QName _QueryPendingUuid_QNAME = new QName("http://facturacion.finkok.com/stamp", "uuid");
     private final static QName _AcuseRecepcionCFDICodEstatus_QNAME = new QName("apps.services.soap.core.views", "CodEstatus");
     private final static QName _AcuseRecepcionCFDIUUID_QNAME = new QName("apps.services.soap.core.views", "UUID");
     private final static QName _AcuseRecepcionCFDIFaultstring_QNAME = new QName("apps.services.soap.core.views", "faultstring");
@@ -71,7 +72,6 @@ public class ObjectFactory {
     private final static QName _AcuseRecepcionCFDIIncidencias_QNAME = new QName("apps.services.soap.core.views", "Incidencias");
     private final static QName _AcuseRecepcionCFDINoCertificadoSAT_QNAME = new QName("apps.services.soap.core.views", "NoCertificadoSAT");
     private final static QName _AcuseRecepcionCFDISatSeal_QNAME = new QName("apps.services.soap.core.views", "SatSeal");
-    private final static QName _QueryPendingResponseQueryPendingResult_QNAME = new QName("http://facturacion.finkok.com/stamp", "query_pendingResult");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.finkok.facturacion.stamp
@@ -319,42 +319,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link AcuseRecepcionCFDI }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://facturacion.finkok.com/stamp", name = "stampResult", scope = StampResponse.class)
-    public JAXBElement<AcuseRecepcionCFDI> createStampResponseStampResult(AcuseRecepcionCFDI value) {
-        return new JAXBElement<AcuseRecepcionCFDI>(_StampResponseStampResult_QNAME, AcuseRecepcionCFDI.class, StampResponse.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://facturacion.finkok.com/stamp", name = "uuid", scope = QueryPending.class)
-    public JAXBElement<String> createQueryPendingUuid(String value) {
-        return new JAXBElement<String>(_QueryPendingUuid_QNAME, String.class, QueryPending.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://facturacion.finkok.com/stamp", name = "username", scope = QueryPending.class)
-    public JAXBElement<String> createQueryPendingUsername(String value) {
-        return new JAXBElement<String>(_QueryPendingUsername_QNAME, String.class, QueryPending.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://facturacion.finkok.com/stamp", name = "password", scope = QueryPending.class)
-    public JAXBElement<String> createQueryPendingPassword(String value) {
-        return new JAXBElement<String>(_QueryPendingPassword_QNAME, String.class, QueryPending.class, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
@@ -424,42 +388,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "apps.services.soap.core.views", name = "xml", scope = QueryPendingResult.class)
     public JAXBElement<String> createQueryPendingResultXml(String value) {
         return new JAXBElement<String>(_QueryPendingResultXml_QNAME, String.class, QueryPendingResult.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link AcuseRecepcionCFDI }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://facturacion.finkok.com/stamp", name = "stampedResult", scope = StampedResponse.class)
-    public JAXBElement<AcuseRecepcionCFDI> createStampedResponseStampedResult(AcuseRecepcionCFDI value) {
-        return new JAXBElement<AcuseRecepcionCFDI>(_StampedResponseStampedResult_QNAME, AcuseRecepcionCFDI.class, StampedResponse.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://facturacion.finkok.com/stamp", name = "username", scope = Stamp.class)
-    public JAXBElement<String> createStampUsername(String value) {
-        return new JAXBElement<String>(_QueryPendingUsername_QNAME, String.class, Stamp.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://facturacion.finkok.com/stamp", name = "xml", scope = Stamp.class)
-    public JAXBElement<byte[]> createStampXml(byte[] value) {
-        return new JAXBElement<byte[]>(_StampXml_QNAME, byte[].class, Stamp.class, ((byte[]) value));
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://facturacion.finkok.com/stamp", name = "password", scope = Stamp.class)
-    public JAXBElement<String> createStampPassword(String value) {
-        return new JAXBElement<String>(_QueryPendingPassword_QNAME, String.class, Stamp.class, value);
     }
 
     /**
@@ -544,30 +472,30 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link AcuseRecepcionCFDI }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://facturacion.finkok.com/stamp", name = "username", scope = QuickStamp.class)
-    public JAXBElement<String> createQuickStampUsername(String value) {
-        return new JAXBElement<String>(_QueryPendingUsername_QNAME, String.class, QuickStamp.class, value);
+    @XmlElementDecl(namespace = "http://facturacion.finkok.com/stamp", name = "stampResult", scope = StampResponse.class)
+    public JAXBElement<AcuseRecepcionCFDI> createStampResponseStampResult(AcuseRecepcionCFDI value) {
+        return new JAXBElement<AcuseRecepcionCFDI>(_StampResponseStampResult_QNAME, AcuseRecepcionCFDI.class, StampResponse.class, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link AcuseRecepcionCFDI }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://facturacion.finkok.com/stamp", name = "xml", scope = QuickStamp.class)
-    public JAXBElement<byte[]> createQuickStampXml(byte[] value) {
-        return new JAXBElement<byte[]>(_StampXml_QNAME, byte[].class, QuickStamp.class, ((byte[]) value));
+    @XmlElementDecl(namespace = "http://facturacion.finkok.com/stamp", name = "stampedResult", scope = StampedResponse.class)
+    public JAXBElement<AcuseRecepcionCFDI> createStampedResponseStampedResult(AcuseRecepcionCFDI value) {
+        return new JAXBElement<AcuseRecepcionCFDI>(_StampedResponseStampedResult_QNAME, AcuseRecepcionCFDI.class, StampedResponse.class, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link AcuseRecepcionCFDI }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://facturacion.finkok.com/stamp", name = "password", scope = QuickStamp.class)
-    public JAXBElement<String> createQuickStampPassword(String value) {
-        return new JAXBElement<String>(_QueryPendingPassword_QNAME, String.class, QuickStamp.class, value);
+    @XmlElementDecl(namespace = "http://facturacion.finkok.com/stamp", name = "quick_stampResult", scope = QuickStampResponse.class)
+    public JAXBElement<AcuseRecepcionCFDI> createQuickStampResponseQuickStampResult(AcuseRecepcionCFDI value) {
+        return new JAXBElement<AcuseRecepcionCFDI>(_QuickStampResponseQuickStampResult_QNAME, AcuseRecepcionCFDI.class, QuickStampResponse.class, value);
     }
 
     /**
@@ -583,9 +511,36 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
+    @XmlElementDecl(namespace = "http://facturacion.finkok.com/stamp", name = "username", scope = SignStamp.class)
+    public JAXBElement<String> createSignStampUsername(String value) {
+        return new JAXBElement<String>(_SignStampUsername_QNAME, String.class, SignStamp.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://facturacion.finkok.com/stamp", name = "xml", scope = SignStamp.class)
+    public JAXBElement<byte[]> createSignStampXml(byte[] value) {
+        return new JAXBElement<byte[]>(_SignStampXml_QNAME, byte[].class, SignStamp.class, ((byte[]) value));
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://facturacion.finkok.com/stamp", name = "password", scope = SignStamp.class)
+    public JAXBElement<String> createSignStampPassword(String value) {
+        return new JAXBElement<String>(_SignStampPassword_QNAME, String.class, SignStamp.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
     @XmlElementDecl(namespace = "http://facturacion.finkok.com/stamp", name = "username", scope = Stamped.class)
     public JAXBElement<String> createStampedUsername(String value) {
-        return new JAXBElement<String>(_QueryPendingUsername_QNAME, String.class, Stamped.class, value);
+        return new JAXBElement<String>(_SignStampUsername_QNAME, String.class, Stamped.class, value);
     }
 
     /**
@@ -594,7 +549,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://facturacion.finkok.com/stamp", name = "xml", scope = Stamped.class)
     public JAXBElement<byte[]> createStampedXml(byte[] value) {
-        return new JAXBElement<byte[]>(_StampXml_QNAME, byte[].class, Stamped.class, ((byte[]) value));
+        return new JAXBElement<byte[]>(_SignStampXml_QNAME, byte[].class, Stamped.class, ((byte[]) value));
     }
 
     /**
@@ -603,16 +558,70 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://facturacion.finkok.com/stamp", name = "password", scope = Stamped.class)
     public JAXBElement<String> createStampedPassword(String value) {
-        return new JAXBElement<String>(_QueryPendingPassword_QNAME, String.class, Stamped.class, value);
+        return new JAXBElement<String>(_SignStampPassword_QNAME, String.class, Stamped.class, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link AcuseRecepcionCFDI }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link QueryPendingResult }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://facturacion.finkok.com/stamp", name = "quick_stampResult", scope = QuickStampResponse.class)
-    public JAXBElement<AcuseRecepcionCFDI> createQuickStampResponseQuickStampResult(AcuseRecepcionCFDI value) {
-        return new JAXBElement<AcuseRecepcionCFDI>(_QuickStampResponseQuickStampResult_QNAME, AcuseRecepcionCFDI.class, QuickStampResponse.class, value);
+    @XmlElementDecl(namespace = "http://facturacion.finkok.com/stamp", name = "query_pendingResult", scope = QueryPendingResponse.class)
+    public JAXBElement<QueryPendingResult> createQueryPendingResponseQueryPendingResult(QueryPendingResult value) {
+        return new JAXBElement<QueryPendingResult>(_QueryPendingResponseQueryPendingResult_QNAME, QueryPendingResult.class, QueryPendingResponse.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://facturacion.finkok.com/stamp", name = "username", scope = Stamp.class)
+    public JAXBElement<String> createStampUsername(String value) {
+        return new JAXBElement<String>(_SignStampUsername_QNAME, String.class, Stamp.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://facturacion.finkok.com/stamp", name = "xml", scope = Stamp.class)
+    public JAXBElement<byte[]> createStampXml(byte[] value) {
+        return new JAXBElement<byte[]>(_SignStampXml_QNAME, byte[].class, Stamp.class, ((byte[]) value));
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://facturacion.finkok.com/stamp", name = "password", scope = Stamp.class)
+    public JAXBElement<String> createStampPassword(String value) {
+        return new JAXBElement<String>(_SignStampPassword_QNAME, String.class, Stamp.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://facturacion.finkok.com/stamp", name = "uuid", scope = QueryPending.class)
+    public JAXBElement<String> createQueryPendingUuid(String value) {
+        return new JAXBElement<String>(_QueryPendingUuid_QNAME, String.class, QueryPending.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://facturacion.finkok.com/stamp", name = "username", scope = QueryPending.class)
+    public JAXBElement<String> createQueryPendingUsername(String value) {
+        return new JAXBElement<String>(_SignStampUsername_QNAME, String.class, QueryPending.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://facturacion.finkok.com/stamp", name = "password", scope = QueryPending.class)
+    public JAXBElement<String> createQueryPendingPassword(String value) {
+        return new JAXBElement<String>(_SignStampPassword_QNAME, String.class, QueryPending.class, value);
     }
 
     /**
@@ -700,36 +709,27 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://facturacion.finkok.com/stamp", name = "username", scope = SignStamp.class)
-    public JAXBElement<String> createSignStampUsername(String value) {
-        return new JAXBElement<String>(_QueryPendingUsername_QNAME, String.class, SignStamp.class, value);
+    @XmlElementDecl(namespace = "http://facturacion.finkok.com/stamp", name = "username", scope = QuickStamp.class)
+    public JAXBElement<String> createQuickStampUsername(String value) {
+        return new JAXBElement<String>(_SignStampUsername_QNAME, String.class, QuickStamp.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://facturacion.finkok.com/stamp", name = "xml", scope = SignStamp.class)
-    public JAXBElement<byte[]> createSignStampXml(byte[] value) {
-        return new JAXBElement<byte[]>(_StampXml_QNAME, byte[].class, SignStamp.class, ((byte[]) value));
+    @XmlElementDecl(namespace = "http://facturacion.finkok.com/stamp", name = "xml", scope = QuickStamp.class)
+    public JAXBElement<byte[]> createQuickStampXml(byte[] value) {
+        return new JAXBElement<byte[]>(_SignStampXml_QNAME, byte[].class, QuickStamp.class, ((byte[]) value));
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://facturacion.finkok.com/stamp", name = "password", scope = SignStamp.class)
-    public JAXBElement<String> createSignStampPassword(String value) {
-        return new JAXBElement<String>(_QueryPendingPassword_QNAME, String.class, SignStamp.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link QueryPendingResult }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://facturacion.finkok.com/stamp", name = "query_pendingResult", scope = QueryPendingResponse.class)
-    public JAXBElement<QueryPendingResult> createQueryPendingResponseQueryPendingResult(QueryPendingResult value) {
-        return new JAXBElement<QueryPendingResult>(_QueryPendingResponseQueryPendingResult_QNAME, QueryPendingResult.class, QueryPendingResponse.class, value);
+    @XmlElementDecl(namespace = "http://facturacion.finkok.com/stamp", name = "password", scope = QuickStamp.class)
+    public JAXBElement<String> createQuickStampPassword(String value) {
+        return new JAXBElement<String>(_SignStampPassword_QNAME, String.class, QuickStamp.class, value);
     }
 
 }

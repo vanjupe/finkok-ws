@@ -9,17 +9,18 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para Folio complex type.
+ * <p>Clase Java para AcuseSATConsulta complex type.
  * 
  * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
- * &lt;complexType name="Folio">
+ * &lt;complexType name="AcuseSATConsulta">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="UUID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="EstatusUUID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="EsCancelable" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="CodigoEstatus" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="Estado" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="EstatusCancelacion" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
@@ -30,66 +31,93 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Folio", namespace = "apps.services.soap.core.views", propOrder = {
-    "uuid",
-    "estatusUUID",
+@XmlType(name = "AcuseSATConsulta", namespace = "apps.services.soap.core.views", propOrder = {
+    "esCancelable",
+    "codigoEstatus",
+    "estado",
     "estatusCancelacion"
 })
-public class Folio {
+public class AcuseSATConsulta {
 
-    @XmlElementRef(name = "UUID", namespace = "apps.services.soap.core.views", type = JAXBElement.class, required = false)
-    protected JAXBElement<String> uuid;
-    @XmlElementRef(name = "EstatusUUID", namespace = "apps.services.soap.core.views", type = JAXBElement.class, required = false)
-    protected JAXBElement<String> estatusUUID;
+    @XmlElementRef(name = "EsCancelable", namespace = "apps.services.soap.core.views", type = JAXBElement.class, required = false)
+    protected JAXBElement<String> esCancelable;
+    @XmlElementRef(name = "CodigoEstatus", namespace = "apps.services.soap.core.views", type = JAXBElement.class, required = false)
+    protected JAXBElement<String> codigoEstatus;
+    @XmlElementRef(name = "Estado", namespace = "apps.services.soap.core.views", type = JAXBElement.class, required = false)
+    protected JAXBElement<String> estado;
     @XmlElementRef(name = "EstatusCancelacion", namespace = "apps.services.soap.core.views", type = JAXBElement.class, required = false)
     protected JAXBElement<String> estatusCancelacion;
 
     /**
-     * Obtiene el valor de la propiedad uuid.
+     * Obtiene el valor de la propiedad esCancelable.
      * 
      * @return
      *     possible object is
      *     {@link JAXBElement }{@code <}{@link String }{@code >}
      *     
      */
-    public JAXBElement<String> getUUID() {
-        return uuid;
+    public JAXBElement<String> getEsCancelable() {
+        return esCancelable;
     }
 
     /**
-     * Define el valor de la propiedad uuid.
+     * Define el valor de la propiedad esCancelable.
      * 
      * @param value
      *     allowed object is
      *     {@link JAXBElement }{@code <}{@link String }{@code >}
      *     
      */
-    public void setUUID(JAXBElement<String> value) {
-        this.uuid = value;
+    public void setEsCancelable(JAXBElement<String> value) {
+        this.esCancelable = value;
     }
 
     /**
-     * Obtiene el valor de la propiedad estatusUUID.
+     * Obtiene el valor de la propiedad codigoEstatus.
      * 
      * @return
      *     possible object is
      *     {@link JAXBElement }{@code <}{@link String }{@code >}
      *     
      */
-    public JAXBElement<String> getEstatusUUID() {
-        return estatusUUID;
+    public JAXBElement<String> getCodigoEstatus() {
+        return codigoEstatus;
     }
 
     /**
-     * Define el valor de la propiedad estatusUUID.
+     * Define el valor de la propiedad codigoEstatus.
      * 
      * @param value
      *     allowed object is
      *     {@link JAXBElement }{@code <}{@link String }{@code >}
      *     
      */
-    public void setEstatusUUID(JAXBElement<String> value) {
-        this.estatusUUID = value;
+    public void setCodigoEstatus(JAXBElement<String> value) {
+        this.codigoEstatus = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad estado.
+     * 
+     * @return
+     *     possible object is
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     
+     */
+    public JAXBElement<String> getEstado() {
+        return estado;
+    }
+
+    /**
+     * Define el valor de la propiedad estado.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     
+     */
+    public void setEstado(JAXBElement<String> value) {
+        this.estado = value;
     }
 
     /**
