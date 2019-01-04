@@ -1,4 +1,3 @@
-<?xml version='1.0' encoding='UTF-8'?>
 <wsdl:definitions xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing"
                   xmlns:tns="http://facturacion.finkok.com/cancel"
                   xmlns:plink="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
@@ -512,64 +511,78 @@
     </wsdl:message>
     <wsdl:portType name="Application">
         <wsdl:operation name="cancel_signature" parameterOrder="cancel_signature">
-            <wsdl:documentation>This method cancels a CFDI by the given enveloped signature</wsdl:documentation>
+            <wsdl:documentation>
+                This method cancels a CFDI by the given enveloped signature
+            </wsdl:documentation>
             <wsdl:input name="cancel_signature" message="tns:cancel_signature"/>
             <wsdl:output name="cancel_signatureResponse" message="tns:cancel_signatureResponse"/>
         </wsdl:operation>
         <wsdl:operation name="get_out_sat_status" parameterOrder="get_out_sat_status">
-            <wsdl:documentation>This method returns the sat receipt (response) of the cancellation webservice
+            <wsdl:documentation>
+                This method returns the sat receipt (response) of the cancellation webservice
             </wsdl:documentation>
             <wsdl:input name="get_out_sat_status" message="tns:get_out_sat_status"/>
             <wsdl:output name="get_out_sat_statusResponse" message="tns:get_out_sat_statusResponse"/>
         </wsdl:operation>
         <wsdl:operation name="get_out_pending" parameterOrder="get_out_pending">
-            <wsdl:documentation>This method returns the sat receipt (response) of the cancellation webservice
+            <wsdl:documentation>
+                This method returns the sat receipt (response) of the cancellation webservice
             </wsdl:documentation>
             <wsdl:input name="get_out_pending" message="tns:get_out_pending"/>
             <wsdl:output name="get_out_pendingResponse" message="tns:get_out_pendingResponse"/>
         </wsdl:operation>
         <wsdl:operation name="get_pending" parameterOrder="get_pending">
-            <wsdl:documentation>This method returns the sat receipt (response) of the cancellation webservice
+            <wsdl:documentation>
+                This method returns the sat receipt (response) of the cancellation webservice
             </wsdl:documentation>
             <wsdl:input name="get_pending" message="tns:get_pending"/>
             <wsdl:output name="get_pendingResponse" message="tns:get_pendingResponse"/>
         </wsdl:operation>
         <wsdl:operation name="get_sat_status" parameterOrder="get_sat_status">
-            <wsdl:documentation>This method returns the sat receipt (response) of the cancellation webservice
+            <wsdl:documentation>
+                This method returns the sat receipt (response) of the cancellation webservice
             </wsdl:documentation>
             <wsdl:input name="get_sat_status" message="tns:get_sat_status"/>
             <wsdl:output name="get_sat_statusResponse" message="tns:get_sat_statusResponse"/>
         </wsdl:operation>
         <wsdl:operation name="get_related" parameterOrder="get_related">
-            <wsdl:documentation>This method returns the sat receipt (response) of the cancellation webservice
+            <wsdl:documentation>
+                This method returns the sat receipt (response) of the cancellation webservice
             </wsdl:documentation>
             <wsdl:input name="get_related" message="tns:get_related"/>
             <wsdl:output name="get_relatedResponse" message="tns:get_relatedResponse"/>
         </wsdl:operation>
         <wsdl:operation name="query_pending_cancellation" parameterOrder="query_pending_cancellation">
-            <wsdl:documentation>This method returns the status of a peding buffer invoice by using an uuid
+            <wsdl:documentation>
+                This method returns the status of a peding buffer invoice by using an uuid
             </wsdl:documentation>
             <wsdl:input name="query_pending_cancellation" message="tns:query_pending_cancellation"/>
             <wsdl:output name="query_pending_cancellationResponse" message="tns:query_pending_cancellationResponse"/>
         </wsdl:operation>
         <wsdl:operation name="sign_cancel" parameterOrder="sign_cancel">
-            <wsdl:documentation>This method returns a session id for work with the webservices</wsdl:documentation>
+            <wsdl:documentation>
+                This method returns a session id for work with the webservices
+            </wsdl:documentation>
             <wsdl:input name="sign_cancel" message="tns:sign_cancel"/>
             <wsdl:output name="sign_cancelResponse" message="tns:sign_cancelResponse"/>
         </wsdl:operation>
         <wsdl:operation name="get_receipt" parameterOrder="get_receipt">
-            <wsdl:documentation>This method returns the sat receipt (response) of the cancellation webservice
+            <wsdl:documentation>
+                This method returns the sat receipt (response) of the cancellation webservice
             </wsdl:documentation>
             <wsdl:input name="get_receipt" message="tns:get_receipt"/>
             <wsdl:output name="get_receiptResponse" message="tns:get_receiptResponse"/>
         </wsdl:operation>
         <wsdl:operation name="cancel" parameterOrder="cancel">
-            <wsdl:documentation>This method returns a session id for work with the webservices</wsdl:documentation>
+            <wsdl:documentation>
+                This method returns a session id for work with the webservices
+            </wsdl:documentation>
             <wsdl:input name="cancel" message="tns:cancel"/>
             <wsdl:output name="cancelResponse" message="tns:cancelResponse"/>
         </wsdl:operation>
         <wsdl:operation name="get_out_related" parameterOrder="get_out_related">
-            <wsdl:documentation>This method returns the sat receipt (response) of the cancellation webservice
+            <wsdl:documentation>
+                This method returns the sat receipt (response) of the cancellation webservice
             </wsdl:documentation>
             <wsdl:input name="get_out_related" message="tns:get_out_related"/>
             <wsdl:output name="get_out_relatedResponse" message="tns:get_out_relatedResponse"/>
