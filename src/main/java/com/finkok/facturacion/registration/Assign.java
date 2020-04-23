@@ -16,18 +16,18 @@ import javax.xml.bind.annotation.XmlType;
  * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
- * &lt;complexType name="assign">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="username" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="password" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="taxpayer_id" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="credit" type="{http://facturacion.finkok.com/registration}assign_creditType" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="assign"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="username" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="password" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="taxpayer_id" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="credit" type="{http://facturacion.finkok.com/registration}assign_creditType" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
