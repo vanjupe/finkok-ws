@@ -33,15 +33,15 @@
             <version>2.3.1</version>
         </dependency>
         <dependency>
-            <groupId>javax.xml.ws</groupId>
-            <artifactId>jaxws-api</artifactId>
-            <version>2.3.1</version>
+            <groupId>com.sun.xml.ws</groupId>
+            <artifactId>jaxws-rt</artifactId>
+            <version>2.3.3</version>
+            <type>pom</type>
         </dependency>
         <dependency>
             <groupId>com.sun.xml.ws</groupId>
-            <artifactId>jaxws-ri</artifactId>
-            <version>2.3.2</version>
-            <type>pom</type>
+            <artifactId>rt</artifactId>
+            <version>2.3.3</version>
         </dependency>
 
     </dependencies>
@@ -57,66 +57,41 @@
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>jaxws-maven-plugin</artifactId>
-                <version>2.6</version>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-codegen-plugin</artifactId>
+                <version>3.4.1</version>
                 <executions>
                     <execution>
-                        <id>stamp</id>
-                        <goals>
-                            <goal>wsimport</goal>
-                        </goals>
+                        <id>generate-sources</id>
+                        <phase>generate-sources</phase>
                         <configuration>
-                            <packageName>com.finkok.facturacion.stamp</packageName>
-                            <sourceDestDir>${basedir}/src/main/java/</sourceDestDir>
-                            <vmArgs>
-                                <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
-                            </vmArgs>
-                            <xnocompile>true</xnocompile>
-                            <verbose>true</verbose>
-                            <extension>true</extension>
-                            <wsdlFiles>
-                                <wsdlFile>${basedir}/src/main/resources/stamp.wsdl</wsdlFile>
-                            </wsdlFiles>
+                            <wsdlOptions>
+                                <wsdlOption>
+                                    <wsdl>${basedir}/src/main/resources/stamp.wsdl</wsdl>
+                                    <extraargs>
+                                        <extraarg>-p</extraarg>
+                                        <extraarg>com.finkok.facturacion.stamp</extraarg>
+                                    </extraargs>
+                                </wsdlOption>
+                                <wsdlOption>
+                                    <wsdl>${basedir}/src/main/resources/cancel.wsdl</wsdl>
+                                    <extraargs>
+                                        <extraarg>-p</extraarg>
+                                        <extraarg>com.finkok.facturacion.cancel</extraarg>
+                                    </extraargs>
+                                </wsdlOption>
+                                <wsdlOption>
+                                    <wsdl>${basedir}/src/main/resources/registration.wsdl</wsdl>
+                                    <extraargs>
+                                        <extraarg>-p</extraarg>
+                                        <extraarg>com.finkok.facturacion.registration</extraarg>
+                                    </extraargs>
+                                </wsdlOption>
+                            </wsdlOptions>
                         </configuration>
-                    </execution>
-                    <execution>
-                        <id>cancel</id>
                         <goals>
-                            <goal>wsimport</goal>
+                            <goal>wsdl2java</goal>
                         </goals>
-                        <configuration>
-                            <packageName>com.finkok.facturacion.cancel</packageName>
-                            <sourceDestDir>${basedir}/src/main/java/</sourceDestDir>
-                            <vmArgs>
-                                <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
-                            </vmArgs>
-                            <xnocompile>true</xnocompile>
-                            <verbose>true</verbose>
-                            <extension>true</extension>
-                            <wsdlFiles>
-                                <wsdlFile>${basedir}/src/main/resources/cancel.wsdl</wsdlFile>
-                            </wsdlFiles>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>register</id>
-                        <goals>
-                            <goal>wsimport</goal>
-                        </goals>
-                        <configuration>
-                            <packageName>com.finkok.facturacion.registration</packageName>
-                            <sourceDestDir>${basedir}/src/main/java/</sourceDestDir>
-                            <vmArgs>
-                                <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
-                            </vmArgs>
-                            <xnocompile>true</xnocompile>
-                            <verbose>true</verbose>
-                            <extension>true</extension>
-                            <wsdlFiles>
-                                <wsdlFile>${basedir}/src/main/resources/registration.wsdl</wsdlFile>
-                            </wsdlFiles>
-                        </configuration>
                     </execution>
                 </executions>
             </plugin>
