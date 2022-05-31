@@ -81,6 +81,13 @@
                                     </extraargs>
                                 </wsdlOption>
                                 <wsdlOption>
+                                    <wsdl>${basedir}/src/main/resources/cancel40.wsdl</wsdl>
+                                    <extraargs>
+                                        <extraarg>-p</extraarg>
+                                        <extraarg>com.finkok.facturacion.cancel40</extraarg>
+                                    </extraargs>
+                                </wsdlOption>
+                                <wsdlOption>
                                     <wsdl>${basedir}/src/main/resources/registration.wsdl</wsdl>
                                     <extraargs>
                                         <extraarg>-p</extraarg>
